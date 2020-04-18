@@ -1282,7 +1282,7 @@ class GMFrame(wx.Frame):
                                                     'geos', '?'), vInfo.get(
                                                     'sqlite', '?'),
                                                 platform.python_version(),
-                                                wx.__version__,
+                                                wx.version(),
                                                 _("Platform"), platform_, osgeo4w),
                                 notification=Notification.MAKE_VISIBLE)
         self._gconsole.WriteCmdLog(' ')
