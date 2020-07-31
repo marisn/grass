@@ -67,6 +67,10 @@ int main(int argc, char *argv[])
     int arr_row, arr_col;
     unsigned long count, count_total;
     int point_class;
+    short unsigned int (*fPvariable)(const LASPointH);
+    int useZ = 1;
+    int useAngle = 0;
+    int useAbsAngle = 0;
 
     double zscale = 1.0;
     double iscale = 1.0;
@@ -79,7 +83,7 @@ int main(int argc, char *argv[])
 
     struct GModule *module;
     struct Option *input_opt, *output_opt, *percent_opt, *type_opt, *filter_opt, *class_opt;
-    struct Option *method_opt, *base_raster_opt;
+    struct Option *method_opt, *variable_opt, *base_raster_opt;
     struct Option *zrange_opt, *zscale_opt;
     struct Option *irange_opt, *iscale_opt;
     struct Option *trim_opt, *pth_opt, *res_opt;
@@ -168,6 +172,40 @@ int main(int argc, char *argv[])
                _("pth (nth) percentile of point values in cell"),
                _("Skewness of point values in cell"),
                _("Trimmed mean of point values in cell"));
+
+    variable_opt = G_define_option();
+    variable_opt->key = "variable";
+    variable_opt->type = TYPE_STRING;
+    variable_opt->required = NO;
+    variable_opt->label = _("Variable to use for raster values");
+    variable_opt->options =
+	"z,intensity,number,returns,direction,angle,abs_angle,source";
+    variable_opt->answer = "z";
+    variable_opt->guisection = _("Statistic");
+    G_asprintf((char **)&(variable_opt->descriptions),
+               "z;%s;"
+               "intensity;%s;"
+               "number;%s;"
+               "returns;%s;"
+               "direction;%s;"
+               "angle;%s;"
+               "abs_angle;%s;"
+               "source;%s;",
+               _("Z coordinate"),
+               /* GTC: LAS LiDAR point property */
+               _("Intensity"),
+               /* GTC: LAS LiDAR point property */
+               _("Return number"),
+               /* GTC: LAS LiDAR point property */
+               _("Number of returns"),
+               /* GTC: LAS LiDAR point property */
+               _("Scan direction"),
+               /* GTC: LAS LiDAR point property */
+               _("Scan angle"),
+               /* GTC: LAS LiDAR point property */
+               _("Absolute value of scan angle"),
+               /* GTC: LAS LiDAR point property */
+               _("Source ID"));
 
     type_opt = G_define_standard_option(G_OPT_R_TYPE);
     type_opt->required = NO;
@@ -522,6 +560,38 @@ int main(int argc, char *argv[])
     if (point_binning.method == METHOD_N)
 	rtype = CELL_TYPE;
 
+    if (!(strcmp(variable_opt->answer, "z") == 0 && !intens_flag->answer)) {
+        useZ = 0;
+	/* Should we enfocte the CELL type? */
+        rtype = CELL_TYPE;
+
+        if (intens_flag->answer){
+            fPvariable = &LASPoint_GetIntensity;
+            G_warning(_("\"i\" flag is deprecated and will be removed in future. Use value=\"intensity\" parameter instead"));
+        }
+        else if (strcmp(variable_opt->answer, "intensity") == 0) {
+            fPvariable = &LASPoint_GetIntensity;
+        }
+        else if (strcmp(variable_opt->answer, "number") == 0) {
+            fPvariable = &LASPoint_GetReturnNumber;
+        }
+        else if (strcmp(variable_opt->answer, "returns") == 0) {
+            fPvariable = &LASPoint_GetNumberOfReturns;
+        }
+        else if (strcmp(variable_opt->answer, "direction") == 0) {
+            fPvariable = &LASPoint_GetScanDirection;
+        }
+        else if (strcmp(variable_opt->answer, "angle") == 0) {
+            useAngle = 1;
+        }
+        else if (strcmp(variable_opt->answer, "abs_angle") == 0) {
+            useAbsAngle = 1;
+        }
+        else {
+            fPvariable = &LASPoint_GetPointSourceId;
+        }
+    }
+
     if (res_opt->answer) {
 	/* align to resolution */
 	res = atof(res_opt->answer);
@@ -739,6 +809,15 @@ int main(int argc, char *argv[])
                     /* use intensity for statistics */
                     if (intens_import_flag->answer)
                         z = intensity;
+                }
+
+                if (!useZ) {
+                    if (useAngle)
+                        z = LASPoint_GetScanAngleRank(LAS_point);
+                    else if (useAbsAngle)
+                        z = abs(LASPoint_GetScanAngleRank(LAS_point));
+                    else
+                        z = (*fPvariable)(LAS_point);
                 }
 
                 count++;
