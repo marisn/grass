@@ -68,9 +68,11 @@ int main(int argc, char *argv[])
     unsigned long count, count_total;
     int point_class;
     short unsigned int (*fPvariable)(const LASPointH);
+
     int useZ = 1;
     int useAngle = 0;
     int useAbsAngle = 0;
+    int useClass = 0;
 
     double zscale = 1.0;
     double iscale = 1.0;
@@ -179,7 +181,7 @@ int main(int argc, char *argv[])
     variable_opt->required = NO;
     variable_opt->label = _("Variable to use for raster values");
     variable_opt->options =
-	"z,intensity,number,returns,direction,angle,abs_angle,source";
+	"z,intensity,number,returns,direction,angle,abs_angle,class,source";
     variable_opt->answer = "z";
     variable_opt->guisection = _("Statistic");
     G_asprintf((char **)&(variable_opt->descriptions),
@@ -190,6 +192,7 @@ int main(int argc, char *argv[])
                "direction;%s;"
                "angle;%s;"
                "abs_angle;%s;"
+               "class;%s;"
                "source;%s;",
                _("Z coordinate"),
                /* GTC: LAS LiDAR point property */
@@ -204,6 +207,8 @@ int main(int argc, char *argv[])
                _("Scan angle"),
                /* GTC: LAS LiDAR point property */
                _("Absolute value of scan angle"),
+               /* GTC: LAS LiDAR point property */
+               _("Point class value"),
                /* GTC: LAS LiDAR point property */
                _("Source ID"));
 
@@ -562,7 +567,7 @@ int main(int argc, char *argv[])
 
     if (!(strcmp(variable_opt->answer, "z") == 0 && !intens_flag->answer)) {
         useZ = 0;
-	/* Should we enfocte the CELL type? */
+        /* Should we enfocte the CELL type? */
         rtype = CELL_TYPE;
 
         if (intens_flag->answer){
@@ -586,6 +591,9 @@ int main(int argc, char *argv[])
         }
         else if (strcmp(variable_opt->answer, "abs_angle") == 0) {
             useAbsAngle = 1;
+        }
+        else if (strcmp(variable_opt->answer, "class") == 0) {
+            useClass = 1;
         }
         else {
             fPvariable = &LASPoint_GetPointSourceId;
@@ -816,6 +824,8 @@ int main(int argc, char *argv[])
                         z = LASPoint_GetScanAngleRank(LAS_point);
                     else if (useAbsAngle)
                         z = abs(LASPoint_GetScanAngleRank(LAS_point));
+                    else if (useClass)
+                        z = LASPoint_GetClassification(LAS_point);
                     else
                         z = (*fPvariable)(LAS_point);
                 }
