@@ -48,6 +48,7 @@ SUBDIRS = \
 	r.out.xyz \
 	r.pack \
 	r.plane \
+	r.pso \
 	r.reclass.area \
 	r.rgb \
 	r.shade \
