@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grassmods_it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-23 22:56+0000\n"
+"POT-Creation-Date: 2025-06-04 10:52+0000\n"
 "PO-Revision-Date: 2025-04-03 08:42+0000\n"
 "Last-Translator: luca <lucadeluge@gmail.com>\n"
 "Language-Team: Italian <https://weblate.osgeo.org/projects/grass-gis/grassmods/it/>\n"
@@ -610,7 +610,7 @@ msgstr "successo"
 #: ../raster/r.quantile/main.c:346 ../raster/r.regression.line/main.c:77
 #: ../raster/r.regression.multi/main.c:171
 #: ../raster/r.stats.quantile/main.c:368 ../raster/r.stats/main.c:226
-#: ../raster/r.univar/r.univar_main.c:179
+#: ../raster/r.univar/r.univar_main.c:180
 #: ../raster/r.univar/r3.univar_main.c:133 ../raster/r.what/main.c:193
 #: ../vector/v.db.select/main.c:182
 #, c-format
@@ -1804,7 +1804,7 @@ msgstr ""
 #: ../raster/r.to.rast3/main.c:197 ../raster/r.to.rast3elev/main.c:375
 #: ../raster/r.to.vect/main.c:77 ../raster/r.topidx/main.c:37
 #: ../raster/r.topmodel/main.c:48 ../raster/r.transect/main.c:102
-#: ../raster/r.univar/r.univar_main.c:151 ../raster/r.uslek/main.c:52
+#: ../raster/r.univar/r.univar_main.c:152 ../raster/r.uslek/main.c:52
 #: ../raster/r.usler/main.c:52 ../raster/r.viewshed/main.cpp:103
 #: ../raster/r.volume/main.c:80 ../raster/r.walk/main.c:212
 #: ../raster/r.water.outlet/main.c:58 ../raster/r.watershed/front/main.c:75
@@ -2618,7 +2618,7 @@ msgstr ""
 #: ../raster/r.statistics/main.c:54 ../raster/r.stats.quantile/main.c:566
 #: ../raster/r.stats.zonal/main.c:105 ../raster/r.stats/main.c:104
 #: ../raster/r.support.stats/main.c:36 ../raster/r.surf.area/main.c:77
-#: ../raster/r.texture/main.c:99 ../raster/r.univar/r.univar_main.c:152
+#: ../raster/r.texture/main.c:99 ../raster/r.univar/r.univar_main.c:153
 #: ../raster/r.univar/r3.univar_main.c:103 ../raster3d/r3.in.lidar/main.c:162
 #: ../raster3d/r3.neighbors/main.c:207 ../raster3d/r3.stats/main.c:48
 #: ../vector/v.class/main.c:47 ../vector/v.kcv/main.c:54
@@ -5200,7 +5200,7 @@ msgstr "Il mio primo modulo raster"
 #: ../raster/r.stream.extract/main.c:173 ../raster/r.stream.extract/main.c:178
 #: ../raster/r.terraflow/main.cpp:207 ../raster/r.terraflow/main.cpp:354
 #: ../raster/r.terraflow/main.cpp:390 ../raster/r.tile/main.c:84
-#: ../raster/r.univar/r.univar_main.c:313 ../raster/r.walk/main.c:467
+#: ../raster/r.univar/r.univar_main.c:314 ../raster/r.walk/main.c:467
 #: ../raster/r.walk/main.c:495 ../raster/r.walk/main.c:500
 #: ../raster/r.walk/main.c:872 ../scripts/d.correlate/d.correlate.py:46
 #: ../scripts/d.polar/d.polar.py:57 ../scripts/d.rast.leg/d.rast.leg.py:95
@@ -15713,7 +15713,7 @@ msgstr ""
 #: ../raster/r.series/main.c:156 ../raster/r.sim/r.sim.sediment/main.c:119
 #: ../raster/r.sim/r.sim.water/main.c:118 ../raster/r.slope.aspect/main.c:171
 #: ../raster/r.smooth.edgepreserve/main.c:49 ../raster/r.sun/main.c:245
-#: ../raster/r.texture/main.c:101 ../raster/r.univar/r.univar_main.c:155
+#: ../raster/r.texture/main.c:101 ../raster/r.univar/r.univar_main.c:156
 #: ../vector/v.surf.rst/main.c:153
 msgid "parallel"
 msgstr ""
@@ -16676,7 +16676,7 @@ msgid "Calculates univariate statistics from a raster map based on a vector map 
 msgstr "Calcola statistiche univariate da una mappa raster basata su una mappa vettoriale e carica le statistiche su nuove colonne di attributi."
 
 #: ../locale/scriptstrings/v.rast.stats_to_translate.c:5
-#: ../raster/r.resamp.stats/main.c:264 ../raster/r.univar/r.univar_main.c:153
+#: ../raster/r.resamp.stats/main.c:264 ../raster/r.univar/r.univar_main.c:154
 #: ../raster/r.univar/r3.univar_main.c:104 ../vector/v.univar/main.c:96
 #: ../vector/v.vect.stats/main.c:131
 msgid "univariate statistics"
@@ -16684,7 +16684,7 @@ msgstr "statistiche univariate"
 
 #: ../locale/scriptstrings/v.rast.stats_to_translate.c:6
 #: ../raster/r.statistics/main.c:55 ../raster/r.stats.quantile/main.c:567
-#: ../raster/r.stats.zonal/main.c:106 ../raster/r.univar/r.univar_main.c:154
+#: ../raster/r.stats.zonal/main.c:106 ../raster/r.univar/r.univar_main.c:155
 #: ../vector/v.vect.stats/main.c:132
 msgid "zonal statistics"
 msgstr ""
@@ -23347,7 +23347,7 @@ msgstr "<%s=%s> numero di punti non valido"
 #: ../raster/r.mfilter/main.c:131 ../raster/r.neighbors/main.c:309
 #: ../raster/r.patch/main.c:112 ../raster/r.resamp.filter/main.c:493
 #: ../raster/r.resamp.interp/main.c:131 ../raster/r.series/main.c:228
-#: ../raster/r.slope.aspect/main.c:308 ../raster/r.univar/r.univar_main.c:203
+#: ../raster/r.slope.aspect/main.c:308 ../raster/r.univar/r.univar_main.c:204
 msgid "GRASS is compiled without OpenMP support. Ignoring threads setting."
 msgstr ""
 
@@ -23356,7 +23356,7 @@ msgstr ""
 #: ../raster/r.resamp.interp/main.c:136 ../raster/r.series/main.c:233
 #: ../raster/r.sim/r.sim.sediment/main.c:374
 #: ../raster/r.sim/r.sim.water/main.c:424 ../raster/r.slope.aspect/main.c:313
-#: ../raster/r.sun/main.c:594 ../raster/r.univar/r.univar_main.c:196
+#: ../raster/r.sun/main.c:594 ../raster/r.univar/r.univar_main.c:197
 #: ../vector/v.surf.rst/main.c:427
 msgid "Parallel processing disabled due to active mask."
 msgstr ""
@@ -24325,7 +24325,7 @@ msgstr "File world di output"
 msgid "Converting <%s>..."
 msgstr "Conversione di <%s> in corso..."
 
-#: ../raster/r.out.png/main.c:280 ../raster/r.univar/r.univar_main.c:277
+#: ../raster/r.out.png/main.c:280 ../raster/r.univar/r.univar_main.c:278
 #, c-format
 msgid "Raster <%s> type mismatch"
 msgstr "La tipologia del raster <%s> non combacia"
@@ -24689,7 +24689,7 @@ msgid "Do not create color and category files"
 msgstr ""
 
 #: ../raster/r.patch/main.c:107 ../raster/r.series/main.c:221
-#: ../raster/r.slope.aspect/main.c:302 ../raster/r.univar/r.univar_main.c:194
+#: ../raster/r.slope.aspect/main.c:302 ../raster/r.univar/r.univar_main.c:195
 #, fuzzy, c-format
 msgid "<%d> is not valid number of nprocs."
 msgstr "<%s=%s> numero di punti non valido"
@@ -30320,18 +30320,25 @@ msgstr ""
 msgid "Use the native resolution and extent of the raster map, instead of the current region"
 msgstr ""
 
-#: ../raster/r.univar/r.univar_main.c:157
+#: ../raster/r.univar/r.univar_main.c:158
 msgid "Calculates univariate statistics from the non-null cells of a raster map."
 msgstr "Calcola le statistiche univariate per le celle non nulle di un raster"
 
-#: ../raster/r.univar/r.univar_main.c:160
+#: ../raster/r.univar/r.univar_main.c:161
 #: ../raster/r.univar/r3.univar_main.c:109
 msgid "Statistics include number of cells counted, minimum and maximum cell values, range, arithmetic mean, population variance, standard deviation, coefficient of variation, and sum."
 msgstr ""
 
-#: ../raster/r.univar/r.univar_main.c:173
+#: ../raster/r.univar/r.univar_main.c:174
 msgid "zones option and region flag -r are mutually exclusive"
 msgstr ""
+
+#: ../raster/r.univar/r.univar_main.c:506
+#: ../raster/r.univar/r.univar_main.c:615
+#, fuzzy
+#| msgid "Unknown type"
+msgid "Unknown map type"
+msgstr "Tipo sconosciuto"
 
 #: ../raster/r.univar/r3.univar_main.c:37
 msgid "3D Raster map used for zoning, must be of type CELL"
@@ -36518,85 +36525,85 @@ msgstr ""
 msgid "Failed to copy attribute table to output vector map"
 msgstr ""
 
-#: ../vector/v.clean/main.c:351 ../vector/v.clean/main.c:362
+#: ../vector/v.clean/main.c:344
 msgid "Rebuilding parts of topology..."
 msgstr "Sto ricostruendo parti della topologia..."
 
-#: ../vector/v.clean/main.c:371 ../vector/v.clean/main.c:416
-#: ../vector/v.clean/main.c:464
+#: ../vector/v.clean/main.c:357 ../vector/v.clean/main.c:402
+#: ../vector/v.clean/main.c:450
 msgid "Tool: Split lines"
 msgstr ""
 
-#: ../vector/v.clean/main.c:374 ../vector/v.clean/main.c:420
-#: ../vector/v.clean/main.c:470
+#: ../vector/v.clean/main.c:360 ../vector/v.clean/main.c:406
+#: ../vector/v.clean/main.c:456
 msgid "Tool: Break lines at intersections"
 msgstr "Strumento: spezza la linea all'intersezione"
 
-#: ../vector/v.clean/main.c:377 ../vector/v.clean/main.c:386
-#: ../vector/v.clean/main.c:422 ../vector/v.clean/main.c:437
-#: ../vector/v.clean/main.c:472
+#: ../vector/v.clean/main.c:363 ../vector/v.clean/main.c:372
+#: ../vector/v.clean/main.c:408 ../vector/v.clean/main.c:423
+#: ../vector/v.clean/main.c:458
 msgid "Tool: Remove duplicates"
 msgstr "Strumento: rimuove duplicati"
 
-#: ../vector/v.clean/main.c:380 ../vector/v.clean/main.c:428
-#: ../vector/v.clean/main.c:477
+#: ../vector/v.clean/main.c:366 ../vector/v.clean/main.c:414
+#: ../vector/v.clean/main.c:463
 msgid "Tool: Merge lines"
 msgstr ""
 
-#: ../vector/v.clean/main.c:390
+#: ../vector/v.clean/main.c:376
 msgid "Tool: Remove dangles"
 msgstr ""
 
-#: ../vector/v.clean/main.c:394
+#: ../vector/v.clean/main.c:380
 msgid "Tool: Change type of boundary dangles"
 msgstr ""
 
-#: ../vector/v.clean/main.c:398
+#: ../vector/v.clean/main.c:384
 msgid "Tool: Remove bridges"
 msgstr ""
 
-#: ../vector/v.clean/main.c:402
+#: ../vector/v.clean/main.c:388
 msgid "Tool: Change type of boundary bridges"
 msgstr ""
 
-#: ../vector/v.clean/main.c:406
+#: ../vector/v.clean/main.c:392
 msgid "Tool: Remove duplicate area centroids"
 msgstr ""
 
-#: ../vector/v.clean/main.c:410
+#: ../vector/v.clean/main.c:396
 msgid "Tool: Snap line to vertex in threshold"
 msgstr ""
 
-#: ../vector/v.clean/main.c:424 ../vector/v.clean/main.c:456
-#: ../vector/v.clean/main.c:474
+#: ../vector/v.clean/main.c:410 ../vector/v.clean/main.c:442
+#: ../vector/v.clean/main.c:460
 msgid "Tool: Remove small angles at nodes"
 msgstr ""
 
-#: ../vector/v.clean/main.c:434
+#: ../vector/v.clean/main.c:420
 msgid "Tool: Break polygons"
 msgstr ""
 
-#: ../vector/v.clean/main.c:442
+#: ../vector/v.clean/main.c:428
 msgid "Tool: Prune lines/boundaries"
 msgstr ""
 
-#: ../vector/v.clean/main.c:446
+#: ../vector/v.clean/main.c:432
 msgid "Tool: Remove small areas"
 msgstr ""
 
-#: ../vector/v.clean/main.c:451
+#: ../vector/v.clean/main.c:437
 msgid "Tool: Merge boundaries"
 msgstr ""
 
-#: ../vector/v.clean/main.c:484
+#: ../vector/v.clean/main.c:470
 msgid "Tool: Remove all lines and boundaries of zero length"
 msgstr ""
 
-#: ../vector/v.clean/main.c:493
+#: ../vector/v.clean/main.c:479
 msgid "Rebuilding topology for output vector map..."
 msgstr "Sto ricostruendo la topologia per la mappa vettoriale di output..."
 
-#: ../vector/v.clean/main.c:504
+#: ../vector/v.clean/main.c:490
 msgid "Building topology for error vector map..."
 msgstr ""
 
