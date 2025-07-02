@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grasslibs_lv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-04 10:56+0000\n"
+"POT-Creation-Date: 2025-07-02 10:53+0000\n"
 "PO-Revision-Date: 2025-03-12 12:05+0000\n"
 "Last-Translator: Edouard Choiniere <echoix@users.noreply.weblate.osgeo.org>\n"
 "Language-Team: Latvian <https://weblate.osgeo.org/projects/grass-gis/grasslibs/lv/>\n"
@@ -935,6 +935,12 @@ msgstr ""
 #, fuzzy
 msgid "Unable to open color descriptions"
 msgstr "Nevar atvērt mapi %s"
+
+#: ../lib/gis/color_str.c:269
+#, fuzzy, c-format
+#| msgid "Unknown vector map format"
+msgid "Unknown color format '%s'"
+msgstr "Nezināms vektordatu kartes formāts"
 
 #: ../lib/gis/compress.c:143 ../lib/gis/compress.c:205
 #: ../lib/gis/compress.c:222 ../lib/gis/compress.c:237
@@ -5202,16 +5208,16 @@ msgstr ""
 msgid "Unknown interpolation method: %s"
 msgstr "Nezināma interpolācijas metode: %s"
 
-#: ../lib/raster/json_color_out.c:112 ../lib/raster/json_color_out.c:196
-#: ../lib/raster/json_color_out.c:210
+#: ../lib/raster/json_color_out.c:69 ../lib/raster/json_color_out.c:157
+#: ../lib/raster/json_color_out.c:172
 msgid "Failed to initialize JSON object. Out of memory?"
 msgstr ""
 
-#: ../lib/raster/json_color_out.c:144
+#: ../lib/raster/json_color_out.c:103
 msgid "Failed to initialize JSON array. Out of memory?"
 msgstr ""
 
-#: ../lib/raster/json_color_out.c:223
+#: ../lib/raster/json_color_out.c:186
 msgid "Failed to serialize JSON to pretty format."
 msgstr ""
 
@@ -6571,7 +6577,7 @@ msgstr[2] "Ir reģistrēts %d primitīvu"
 #: ../lib/vector/Vlib/build_sfa.c:668
 #, fuzzy, c-format
 msgid "One vertex registered"
-msgid_plural "%<PRId64> vertices registered"
+msgid_plural "%d vertices registered"
 msgstr[0] "Reģistrēta %d virsotne"
 msgstr[1] "Reģistrētas %d virsotnes"
 msgstr[2] "Reģistrēts %d virsotņu"

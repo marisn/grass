@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grasslibs_ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-04 10:56+0000\n"
+"POT-Creation-Date: 2025-07-02 10:53+0000\n"
 "PO-Revision-Date: 2023-06-28 19:08+0000\n"
 "Last-Translator: Sergey Kazorin <kazorin@basealt.ru>\n"
 "Language-Team: Russian <https://weblate.osgeo.org/projects/grass-gis/grasslibs/ru/>\n"
@@ -965,6 +965,12 @@ msgstr "диапазон: от %g до %g"
 #: ../lib/gis/color_rules.c:367
 msgid "Unable to open color descriptions"
 msgstr "Не удалось открыть описания цветов"
+
+#: ../lib/gis/color_str.c:269
+#, fuzzy, c-format
+#| msgid "Unknown algorithm '%s'"
+msgid "Unknown color format '%s'"
+msgstr "Неизвестный алгоритм «%s»"
 
 #: ../lib/gis/compress.c:143 ../lib/gis/compress.c:205
 #: ../lib/gis/compress.c:222 ../lib/gis/compress.c:237
@@ -5351,18 +5357,18 @@ msgstr "Эта версия GRASS не поддерживает сжатие %s,
 msgid "Unknown interpolation method: %s"
 msgstr "Неизвестный метод интерполяции: %s"
 
-#: ../lib/raster/json_color_out.c:112 ../lib/raster/json_color_out.c:196
-#: ../lib/raster/json_color_out.c:210
+#: ../lib/raster/json_color_out.c:69 ../lib/raster/json_color_out.c:157
+#: ../lib/raster/json_color_out.c:172
 msgid "Failed to initialize JSON object. Out of memory?"
 msgstr ""
 
-#: ../lib/raster/json_color_out.c:144
+#: ../lib/raster/json_color_out.c:103
 #, fuzzy
 #| msgid "Error while adding point to array. Out of memory"
 msgid "Failed to initialize JSON array. Out of memory?"
 msgstr "Ошибка добавления точки в массив. Не хватает памяти"
 
-#: ../lib/raster/json_color_out.c:223
+#: ../lib/raster/json_color_out.c:186
 msgid "Failed to serialize JSON to pretty format."
 msgstr ""
 
@@ -6728,7 +6734,7 @@ msgstr[3] "Один примитив зарегистрирован"
 #| msgid "One vertex registered"
 #| msgid_plural "%<PRId64> vertices registered"
 msgid "One vertex registered"
-msgid_plural "%<PRId64> vertices registered"
+msgid_plural "%d vertices registered"
 msgstr[0] "%<PRId64> вершина зарегистрирована"
 msgstr[1] "%<PRId64> вершины зарегистрировано"
 msgstr[2] "%<PRId64> вершин зарегистрировано"

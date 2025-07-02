@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grasslibs_ko\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-04 10:56+0000\n"
+"POT-Creation-Date: 2025-07-02 10:53+0000\n"
 "PO-Revision-Date: 2025-03-12 12:05+0000\n"
 "Last-Translator: Edouard Choiniere <echoix@users.noreply.weblate.osgeo.org>\n"
 "Language-Team: Korean <https://weblate.osgeo.org/projects/grass-gis/grasslibs/ko/>\n"
@@ -955,6 +955,12 @@ msgstr ""
 #: ../lib/gis/color_rules.c:367
 msgid "Unable to open color descriptions"
 msgstr ""
+
+#: ../lib/gis/color_str.c:269
+#, fuzzy, c-format
+#| msgid "Unknown algorithm '%s'"
+msgid "Unknown color format '%s'"
+msgstr "알려지지 않은 알고리듬 '%s'"
 
 #: ../lib/gis/compress.c:143 ../lib/gis/compress.c:205
 #: ../lib/gis/compress.c:222 ../lib/gis/compress.c:237
@@ -5240,18 +5246,18 @@ msgstr ""
 msgid "Unknown interpolation method: %s"
 msgstr "알려지지 않은 보간 방법: %s"
 
-#: ../lib/raster/json_color_out.c:112 ../lib/raster/json_color_out.c:196
-#: ../lib/raster/json_color_out.c:210
+#: ../lib/raster/json_color_out.c:69 ../lib/raster/json_color_out.c:157
+#: ../lib/raster/json_color_out.c:172
 msgid "Failed to initialize JSON object. Out of memory?"
 msgstr ""
 
-#: ../lib/raster/json_color_out.c:144
+#: ../lib/raster/json_color_out.c:103
 #, fuzzy
 #| msgid "Error while adding point to array. Out of memory"
 msgid "Failed to initialize JSON array. Out of memory?"
 msgstr "메모리가 부족해서 점을 배열에 추가하는 중 오류"
 
-#: ../lib/raster/json_color_out.c:223
+#: ../lib/raster/json_color_out.c:186
 msgid "Failed to serialize JSON to pretty format."
 msgstr ""
 
@@ -6610,7 +6616,7 @@ msgstr[0] ""
 #: ../lib/vector/Vlib/build_sfa.c:668
 #, c-format
 msgid "One vertex registered"
-msgid_plural "%<PRId64> vertices registered"
+msgid_plural "%d vertices registered"
 msgstr[0] ""
 
 #: ../lib/vector/Vlib/build_nat.c:137

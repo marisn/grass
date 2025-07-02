@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grasslibs_si\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-04 10:56+0000\n"
+"POT-Creation-Date: 2025-07-02 10:53+0000\n"
 "PO-Revision-Date: 2025-03-12 12:05+0000\n"
 "Last-Translator: Edouard Choiniere <echoix@users.noreply.weblate.osgeo.org>\n"
 "Language-Team: Sinhala <https://weblate.osgeo.org/projects/grass-gis/grasslibs/si/>\n"
@@ -927,6 +927,11 @@ msgstr ""
 
 #: ../lib/gis/color_rules.c:367
 msgid "Unable to open color descriptions"
+msgstr ""
+
+#: ../lib/gis/color_str.c:269
+#, c-format
+msgid "Unknown color format '%s'"
 msgstr ""
 
 #: ../lib/gis/compress.c:143 ../lib/gis/compress.c:205
@@ -5168,16 +5173,16 @@ msgstr ""
 msgid "Unknown interpolation method: %s"
 msgstr ""
 
-#: ../lib/raster/json_color_out.c:112 ../lib/raster/json_color_out.c:196
-#: ../lib/raster/json_color_out.c:210
+#: ../lib/raster/json_color_out.c:69 ../lib/raster/json_color_out.c:157
+#: ../lib/raster/json_color_out.c:172
 msgid "Failed to initialize JSON object. Out of memory?"
 msgstr ""
 
-#: ../lib/raster/json_color_out.c:144
+#: ../lib/raster/json_color_out.c:103
 msgid "Failed to initialize JSON array. Out of memory?"
 msgstr ""
 
-#: ../lib/raster/json_color_out.c:223
+#: ../lib/raster/json_color_out.c:186
 msgid "Failed to serialize JSON to pretty format."
 msgstr ""
 
@@ -6536,7 +6541,7 @@ msgstr[1] ""
 #: ../lib/vector/Vlib/build_sfa.c:668
 #, c-format
 msgid "One vertex registered"
-msgid_plural "%<PRId64> vertices registered"
+msgid_plural "%d vertices registered"
 msgstr[0] ""
 msgstr[1] ""
 
