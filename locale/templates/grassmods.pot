@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-27 17:16+0000\n"
+"POT-Creation-Date: 2025-10-04 15:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1166,12 +1166,12 @@ msgstr ""
 msgid "Unknown type"
 msgstr ""
 
-#: ../db/drivers/ogr/execute.c:58 ../vector/v.out.ogr/main.c:670
+#: ../db/drivers/ogr/execute.c:63 ../vector/v.out.ogr/main.c:670
 #, c-format
 msgid "OGR layer <%s> not found"
 msgstr ""
 
-#: ../db/drivers/ogr/execute.c:71 ../scripts/db.univar/db.univar.py:137
+#: ../db/drivers/ogr/execute.c:77 ../scripts/db.univar/db.univar.py:137
 #: ../vector/v.colors.out/make_colors.c:42 ../vector/v.colors/scan_attr.c:34
 #: ../vector/v.db.connect/main.c:491 ../vector/v.distance/main.c:574
 #: ../vector/v.distance/main.c:616 ../vector/v.in.db/main.c:195
@@ -1184,7 +1184,7 @@ msgstr ""
 msgid "Column <%s> not found in table <%s>"
 msgstr ""
 
-#: ../db/drivers/ogr/execute.c:113
+#: ../db/drivers/ogr/execute.c:120
 #, c-format
 msgid "\tOGR failed to write feature fid=%lld to layer <%s>"
 msgstr ""
@@ -1854,7 +1854,7 @@ msgstr ""
 #: ../raster/r.out.ppm/main.c:52 ../raster/r.out.ppm3/main.c:57
 #: ../raster/r.out.vrml/main.c:44 ../raster/r.out.vtk/main.c:59
 #: ../raster/r.param.scale/interface.c:52 ../raster/r.patch/main.c:68
-#: ../raster/r.path/main.c:149 ../raster/r.profile/main.c:57
+#: ../raster/r.path/main.c:150 ../raster/r.profile/main.c:57
 #: ../raster/r.proj/main.c:151 ../raster/r.quant/main.c:48
 #: ../raster/r.quantile/main.c:297 ../raster/r.random.cells/main.c:49
 #: ../raster/r.random.surface/main.c:56 ../raster/r.random/main.c:53
@@ -2165,7 +2165,7 @@ msgstr ""
 #: ../general/manage/lister/vector.c:32 ../misc/m.nviz.image/vector.c:301
 #: ../raster/r.carve/main.c:157 ../raster/r.cost/main.c:599
 #: ../raster/r.cost/main.c:666 ../raster/r.drain/main.c:277
-#: ../raster/r.path/main.c:320 ../raster/r.random/support.c:66
+#: ../raster/r.path/main.c:321 ../raster/r.random/support.c:66
 #: ../raster/r.region/main.c:172 ../raster/r.sim/simlib/observation_points.c:42
 #: ../raster/r.walk/main.c:760 ../raster/r.walk/main.c:827
 #: ../raster/r.what/main.c:265 ../raster3d/r3.flow/main.c:398
@@ -2236,7 +2236,7 @@ msgstr ""
 #: ../display/d.extract/main.c:104 ../doc/examples/vector/v.example/main.c:101
 #: ../raster/r.carve/vect.c:30 ../raster/r.contour/main.c:155
 #: ../raster/r.drain/main.c:204 ../raster/r.flow/flow_io.c:181
-#: ../raster/r.path/main.c:260 ../raster/r.random/random.c:58
+#: ../raster/r.path/main.c:261 ../raster/r.random/random.c:58
 #: ../raster/r.resamp.bspline/main.c:484 ../raster/r.sim/simlib/output.c:54
 #: ../raster/r.sim/simlib/output.c:61 ../raster/r.stream.extract/close.c:38
 #: ../raster/r.to.vect/main.c:170 ../raster/r.volume/main.c:232
@@ -4504,7 +4504,7 @@ msgstr ""
 #: ../display/d.vect/lines.c:136 ../display/d.vect/topo.c:52
 #: ../display/d.vect/vert.c:27 ../display/d.vect/zcoor.c:38
 #: ../raster/r.cost/main.c:615 ../raster/r.cost/main.c:679
-#: ../raster/r.drain/main.c:294 ../raster/r.path/main.c:338
+#: ../raster/r.drain/main.c:294 ../raster/r.path/main.c:339
 #: ../raster/r.to.vect/main.c:300 ../raster/r.walk/main.c:776
 #: ../raster/r.walk/main.c:840 ../vector/v.colors.out/scan_cats.c:31
 #: ../vector/v.colors/scan_cats.c:24 ../vector/v.colors/scan_z.c:38
@@ -5670,8 +5670,8 @@ msgstr ""
 
 #: ../general/g.findfile/main.c:158
 #: ../imagery/i.ortho.photo/i.ortho.photo/menu.c:90
-#: ../raster/r.out.mpeg/main.c:151 ../raster/r.path/main.c:240
-#: ../raster/r.path/main.c:247 ../raster/r.path/main.c:253
+#: ../raster/r.out.mpeg/main.c:151 ../raster/r.path/main.c:241
+#: ../raster/r.path/main.c:248 ../raster/r.path/main.c:254
 #, c-format
 msgid "Name <%s> is too long"
 msgstr ""
@@ -11375,9 +11375,9 @@ msgstr ""
 #: ../raster/r.clump/minsize.c:252 ../raster/r.clump/minsize.c:287
 #: ../raster/r.clump/minsize.c:293 ../raster/r.clump/minsize.c:424
 #: ../raster/r.clump/minsize.c:447 ../raster/r.clump/minsize.c:519
-#: ../raster/r.path/main.c:780 ../raster/r.path/main.c:811
-#: ../raster/r.path/main.c:941 ../raster/r.path/main.c:1051
-#: ../raster/r.path/main.c:1077 ../raster/r.path/main.c:1176
+#: ../raster/r.path/main.c:785 ../raster/r.path/main.c:816
+#: ../raster/r.path/main.c:946 ../raster/r.path/main.c:1056
+#: ../raster/r.path/main.c:1082 ../raster/r.path/main.c:1181
 msgid "Unable to read from temp file"
 msgstr ""
 
@@ -13726,7 +13726,7 @@ msgstr ""
 #: ../raster/r.basins.fill/main.c:53 ../raster/r.carve/main.c:71
 #: ../raster/r.drain/main.c:111 ../raster/r.fill.dir/main.c:88
 #: ../raster/r.flow/main.c:415 ../raster/r.gwflow/main.c:223
-#: ../raster/r.lake/main.c:153 ../raster/r.path/main.c:150
+#: ../raster/r.lake/main.c:153 ../raster/r.path/main.c:151
 #: ../raster/r.sim/r.sim.sediment/main.c:113
 #: ../raster/r.sim/r.sim.water/main.c:113
 #: ../raster/r.solute.transport/main.c:229 ../raster/r.stream.extract/main.c:77
@@ -13739,7 +13739,7 @@ msgid "hydrology"
 msgstr ""
 
 #: ../locale/scriptstrings/r.drain_to_translate.c:4 ../raster/r.cost/main.c:163
-#: ../raster/r.drain/main.c:112 ../raster/r.path/main.c:151
+#: ../raster/r.drain/main.c:112 ../raster/r.path/main.c:152
 #: ../raster/r.walk/main.c:213
 msgid "cost surface"
 msgstr ""
@@ -13777,7 +13777,7 @@ msgstr ""
 
 #: ../locale/scriptstrings/r.drain_to_translate.c:12
 #: ../raster/r.cost/main.c:220 ../raster/r.drain/main.c:139
-#: ../raster/r.path/main.c:192 ../raster/r.walk/main.c:275
+#: ../raster/r.path/main.c:193 ../raster/r.walk/main.c:275
 msgid "Coordinates of starting point(s) (E,N)"
 msgstr ""
 
@@ -13786,19 +13786,19 @@ msgstr ""
 #: ../raster/r.cost/main.c:203 ../raster/r.cost/main.c:215
 #: ../raster/r.cost/main.c:221 ../raster/r.cost/main.c:263
 #: ../raster/r.drain/main.c:140 ../raster/r.drain/main.c:147
-#: ../raster/r.path/main.c:193 ../raster/r.path/main.c:199
+#: ../raster/r.path/main.c:194 ../raster/r.path/main.c:200
 #: ../raster/r.walk/main.c:258 ../raster/r.walk/main.c:270
 #: ../raster/r.walk/main.c:276 ../raster/r.walk/main.c:349
 msgid "Start"
 msgstr ""
 
 #: ../locale/scriptstrings/r.drain_to_translate.c:14
-#: ../raster/r.drain/main.c:145 ../raster/r.path/main.c:198
+#: ../raster/r.drain/main.c:145 ../raster/r.path/main.c:199
 msgid "Name of starting vector points map(s)"
 msgstr ""
 
 #: ../locale/scriptstrings/r.drain_to_translate.c:16
-#: ../raster/r.drain/main.c:151 ../raster/r.path/main.c:215
+#: ../raster/r.drain/main.c:151 ../raster/r.path/main.c:216
 msgid "Copy input cell values on output"
 msgstr ""
 
@@ -13806,18 +13806,18 @@ msgstr ""
 #: ../locale/scriptstrings/r.drain_to_translate.c:19
 #: ../locale/scriptstrings/r.drain_to_translate.c:21
 #: ../raster/r.drain/main.c:152 ../raster/r.drain/main.c:157
-#: ../raster/r.drain/main.c:162 ../raster/r.path/main.c:216
-#: ../raster/r.path/main.c:221 ../raster/r.path/main.c:226
+#: ../raster/r.drain/main.c:162 ../raster/r.path/main.c:217
+#: ../raster/r.path/main.c:222 ../raster/r.path/main.c:227
 msgid "Path settings"
 msgstr ""
 
 #: ../locale/scriptstrings/r.drain_to_translate.c:18
-#: ../raster/r.drain/main.c:156 ../raster/r.path/main.c:220
+#: ../raster/r.drain/main.c:156 ../raster/r.path/main.c:221
 msgid "Accumulate input values along the path"
 msgstr ""
 
 #: ../locale/scriptstrings/r.drain_to_translate.c:20
-#: ../raster/r.drain/main.c:161 ../raster/r.path/main.c:225
+#: ../raster/r.drain/main.c:161 ../raster/r.path/main.c:226
 msgid "Count cell numbers along the path"
 msgstr ""
 
@@ -19406,7 +19406,7 @@ msgid "Initializing directional output..."
 msgstr ""
 
 #: ../raster/r.cost/main.c:601 ../raster/r.drain/main.c:280
-#: ../raster/r.path/main.c:323 ../raster/r.walk/main.c:762
+#: ../raster/r.path/main.c:324 ../raster/r.walk/main.c:762
 #, c-format
 msgid "Reading vector map <%s> with start points..."
 msgstr ""
@@ -19678,12 +19678,12 @@ msgstr ""
 msgid "Specify just one of the -c, -a and -n flags"
 msgstr ""
 
-#: ../raster/r.drain/main.c:246 ../raster/r.path/main.c:292
+#: ../raster/r.drain/main.c:246 ../raster/r.path/main.c:293
 #, c-format
 msgid "Starting point %d is outside the current region"
 msgstr ""
 
-#: ../raster/r.drain/main.c:331 ../raster/r.path/main.c:374
+#: ../raster/r.drain/main.c:331 ../raster/r.path/main.c:375
 #, c-format
 msgid "Starting vector map <%s> contains no points in the current region"
 msgstr ""
@@ -19697,8 +19697,8 @@ msgid "Calculating flow directions..."
 msgstr ""
 
 #: ../raster/r.drain/main.c:485 ../raster/r.in.lidar/main.c:783
-#: ../raster/r.in.pdal/main.cpp:886 ../raster/r.path/main.c:593
-#: ../raster/r.path/main.c:623 ../raster/r.viewshed/grass.cpp:621
+#: ../raster/r.in.pdal/main.cpp:886 ../raster/r.path/main.c:598
+#: ../raster/r.path/main.c:628 ../raster/r.viewshed/grass.cpp:621
 msgid "Writing output raster map..."
 msgstr ""
 
@@ -24783,164 +24783,169 @@ msgstr ""
 msgid "Creating support files for raster map <%s>..."
 msgstr ""
 
-#: ../raster/r.path/main.c:153
+#: ../raster/r.path/main.c:154
 msgid "Traces paths from starting points following input directions."
 msgstr ""
 
-#: ../raster/r.path/main.c:156
+#: ../raster/r.path/main.c:157
 msgid "Name of input direction"
 msgstr ""
 
-#: ../raster/r.path/main.c:158
+#: ../raster/r.path/main.c:159
 msgid "Direction in degrees CCW from east, or bitmask encoded"
 msgstr ""
 
-#: ../raster/r.path/main.c:163
+#: ../raster/r.path/main.c:164
 msgid "Format of the input direction map"
 msgstr ""
 
-#: ../raster/r.path/main.c:169
+#: ../raster/r.path/main.c:170
 msgid "auto-detect direction format"
 msgstr ""
 
-#: ../raster/r.path/main.c:169
+#: ../raster/r.path/main.c:170
 msgid "degrees CCW from East"
 msgstr ""
 
-#: ../raster/r.path/main.c:170
+#: ../raster/r.path/main.c:171
 msgid "degrees CCW from East divided by 45 (e.g. r.watershed directions)"
 msgstr ""
 
-#: ../raster/r.path/main.c:171
+#: ../raster/r.path/main.c:172
 msgid "bitmask encoded directions (e.g. r.cost -b)"
 msgstr ""
 
-#: ../raster/r.path/main.c:176
+#: ../raster/r.path/main.c:177
 msgid "Name of input raster values to be used for output"
 msgstr ""
 
-#: ../raster/r.path/main.c:182
+#: ../raster/r.path/main.c:183
 msgid "Name for output raster path map"
 msgstr ""
 
-#: ../raster/r.path/main.c:187
+#: ../raster/r.path/main.c:188
 msgid "Name for output vector path map"
 msgstr ""
 
-#: ../raster/r.path/main.c:204
+#: ../raster/r.path/main.c:205
 msgid "Start bitmask encoded directions from East (e.g., r.terraflow)"
 msgstr ""
 
-#: ../raster/r.path/main.c:205 ../raster/r.path/main.c:211
+#: ../raster/r.path/main.c:206 ../raster/r.path/main.c:212
 msgid "Direction settings"
 msgstr ""
 
-#: ../raster/r.path/main.c:210
+#: ../raster/r.path/main.c:211
 msgid "Do not break lines (faster for single-direction bitmask encoding)"
 msgstr ""
 
-#: ../raster/r.path/main.c:383
+#: ../raster/r.path/main.c:384
 msgid "No start point(s) specified"
 msgstr ""
 
-#: ../raster/r.path/main.c:393
+#: ../raster/r.path/main.c:394
 #, c-format
 msgid "Reading raster values map <%s> ..."
 msgstr ""
 
-#: ../raster/r.path/main.c:406 ../raster/r.path/main.c:484
-#: ../raster/r.path/main.c:501
+#: ../raster/r.path/main.c:399
+#, c-format
+msgid "Unable to open temporary file <%s>: %s"
+msgstr ""
+
+#: ../raster/r.path/main.c:411 ../raster/r.path/main.c:489
+#: ../raster/r.path/main.c:506
 msgid "Unable to write to tempfile"
 msgstr ""
 
-#: ../raster/r.path/main.c:414
+#: ../raster/r.path/main.c:419
 msgid "Unable to read range file"
 msgstr ""
 
-#: ../raster/r.path/main.c:417
+#: ../raster/r.path/main.c:422
 #, c-format
 msgid "Invalid directions map <%s>"
 msgstr ""
 
-#: ../raster/r.path/main.c:422
+#: ../raster/r.path/main.c:427
 msgid "Directional degrees can not be > 360"
 msgstr ""
 
-#: ../raster/r.path/main.c:428
+#: ../raster/r.path/main.c:433
 msgid "Directional degrees divided by 45 can not be > 8"
 msgstr ""
 
-#: ../raster/r.path/main.c:433
+#: ../raster/r.path/main.c:438
 #, c-format
 msgid "Bitmask encoded directions can not be > %d"
 msgstr ""
 
-#: ../raster/r.path/main.c:440
+#: ../raster/r.path/main.c:445
 msgid "Input direction format assumed to be degrees CCW from East divided by 45"
 msgstr ""
 
-#: ../raster/r.path/main.c:445
+#: ../raster/r.path/main.c:450
 msgid "Input direction format assumed to be bitmask encoded without Knight's move"
 msgstr ""
 
-#: ../raster/r.path/main.c:451
+#: ../raster/r.path/main.c:456
 msgid "Input direction format assumed to be degrees CCW from East"
 msgstr ""
 
-#: ../raster/r.path/main.c:455
+#: ../raster/r.path/main.c:460
 msgid "Input direction format assumed to be bitmask encoded with Knight's move"
 msgstr ""
 
-#: ../raster/r.path/main.c:460
+#: ../raster/r.path/main.c:465
 #, c-format
 msgid "Unable to detect format of input direction map <%s>"
 msgstr ""
 
-#: ../raster/r.path/main.c:464
+#: ../raster/r.path/main.c:469
 #, c-format
 msgid "Invalid directions format '%s'"
 msgstr ""
 
-#: ../raster/r.path/main.c:466
+#: ../raster/r.path/main.c:471
 #, c-format
 msgid "Reading direction map <%s> ..."
 msgstr ""
 
-#: ../raster/r.path/main.c:520
+#: ../raster/r.path/main.c:525
 msgid "Processing start points..."
 msgstr ""
 
-#: ../raster/r.path/main.c:530 ../vector/v.buffer/main.c:410
+#: ../raster/r.path/main.c:535 ../vector/v.buffer/main.c:410
 #: ../vector/v.in.ogr/main.c:881 ../vector/v.overlay/main.c:237
 #: ../vector/v.voronoi/main.c:215
 msgid "Unable to create temporary vector map"
 msgstr ""
 
-#: ../raster/r.path/main.c:536 ../raster/r.path/main.c:552
+#: ../raster/r.path/main.c:541 ../raster/r.path/main.c:557
 #, c-format
 msgid "No path at row %d, col %d"
 msgstr ""
 
-#: ../raster/r.path/main.c:541 ../vector/v.overlay/area_area.c:134
+#: ../raster/r.path/main.c:546 ../vector/v.overlay/area_area.c:134
 #: ../vector/v.overlay/line_area.c:255
 msgid "Breaking lines..."
 msgstr ""
 
-#: ../raster/r.path/main.c:679
+#: ../raster/r.path/main.c:684
 msgid "Unable to increase point list"
 msgstr ""
 
-#: ../raster/r.path/main.c:871
+#: ../raster/r.path/main.c:876
 #, c-format
 msgid "No path from row %d, col %d"
 msgstr ""
 
-#: ../raster/r.path/main.c:885
+#: ../raster/r.path/main.c:890
 #, c-format
 msgid "Invalid direction %d"
 msgstr ""
 
-#: ../raster/r.path/main.c:978
+#: ../raster/r.path/main.c:983
 msgid "Path is leaving the current region"
 msgstr ""
 
