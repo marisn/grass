@@ -4320,6 +4320,16 @@ ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $
 ac_compiler_gnu=$ac_cv_c_compiler_gnu
 
 
+# Start some config.h customizations
+
+# Some old system hacks. Probably obsolete in 2025?
+
+
+# LFS support for MinGW
+
+
+# End some config.h customizations
+
 # Enable C++ option
 
 
@@ -13051,6 +13061,13 @@ case "$with_opengl" in
 esac
 
 if test -n "$USE_OPENGL" ; then
+
+# We assume any OpenGL capable of running GRASS also is recent enough
+# to have FBO support.
+# Moved here from customizations of configure.h.in
+
+printf "%s\n" "#define OPENGL_FBO 1" >>confdefs.h
+
 
 if test "$OPENGL_X11" = 1 ; then
 
