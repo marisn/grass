@@ -13628,6 +13628,9 @@ OPENGLLIBPATH="$OPENGLPATH"
 printf "%s\n" "#define OPENGL_AQUA 1" >>confdefs.h
 
 
+printf "%s\n" "#define OPENGL_AGL 1" >>confdefs.h
+
+
 fi # $OPENGL_AQUA
 
 if test "$OPENGL_WINDOWS" = 1 ; then

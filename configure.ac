@@ -1469,6 +1469,7 @@ OPENGLINC="$OPENGLPATH"
 OPENGLLIBPATH="$OPENGLPATH"
 
 AC_DEFINE(OPENGL_AQUA, 1, [Define to 1 if OpenGL uses Aqua (MacOS X).])
+AC_DEFINE(OPENGL_AGL, 1, [Define to 1 if OpenGL uses AGL (MacOS X).])
 
 fi # $OPENGL_AQUA
 
