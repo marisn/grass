@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-18 16:02+0000\n"
+"POT-Creation-Date: 2025-11-01 15:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -5250,16 +5250,15 @@ msgstr ""
 msgid "Unknown interpolation method: %s"
 msgstr ""
 
-#: ../lib/raster/json_color_out.c:69 ../lib/raster/json_color_out.c:157
-#: ../lib/raster/json_color_out.c:172
+#: ../lib/raster/json_color_out.c:69 ../lib/raster/json_color_out.c:103
 msgid "Failed to initialize JSON object. Out of memory?"
 msgstr ""
 
-#: ../lib/raster/json_color_out.c:103
+#: ../lib/raster/json_color_out.c:110
 msgid "Failed to initialize JSON array. Out of memory?"
 msgstr ""
 
-#: ../lib/raster/json_color_out.c:186
+#: ../lib/raster/json_color_out.c:176
 msgid "Failed to serialize JSON to pretty format."
 msgstr ""
 
