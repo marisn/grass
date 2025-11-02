@@ -174,7 +174,7 @@ int do_cum(void)
                     break;
             }
             /* do not distribute flow along edges, this causes artifacts */
-            if (edge) {
+            if (!no_edge_effect_flag && edge) {
                 is_swale = FLAG_GET(swale, r, c);
                 if (is_swale && aspect > 0) {
                     aspect = -1 * drain[r - r_nbr + 1][c - c_nbr + 1];

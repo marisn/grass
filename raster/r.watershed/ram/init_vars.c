@@ -43,6 +43,7 @@ int init_vars(int argc, char *argv[])
     abs_acc = 0;
     flat_flag = 0;
     ele_scale = 1;
+    no_edge_effect_flag = 0;
 
     for (r = 1; r < argc; r++) {
         if (sscanf(argv[r], "elevation=%s", ele_name) == 1)
@@ -102,6 +103,8 @@ int init_vars(int argc, char *argv[])
             abs_acc = 1;
         else if (strcmp(argv[r], "-b") == 0)
             flat_flag = 1;
+        else if (strcmp(argv[r], "-e") == 0)
+            no_edge_effect_flag = 1;
         else
             usage(argv[0]);
     }

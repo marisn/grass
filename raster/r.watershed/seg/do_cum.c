@@ -161,7 +161,7 @@ int do_cum(void)
                     np_side = ct_dir;
             }
             /* do not distribute flow along edges, this causes artifacts */
-            if (FLAG_GET(af.flag, EDGEFLAG)) {
+            if (!no_edge_effect_flag && FLAG_GET(af.flag, EDGEFLAG)) {
                 if (FLAG_GET(af.flag, SWALEFLAG) && af.asp > 0) {
                     af.asp = -1 * drain[r - dr + 1][c - dc + 1];
                 }

@@ -23,7 +23,7 @@
 
 struct Cell_head window;
 
-int mfd, c_fac, abs_acc, ele_scale;
+int mfd, c_fac, abs_acc, ele_scale, no_edge_effect_flag;
 size_t *heap_index, heap_size;
 size_t first_astar, first_cum, nxt_avail_pt, total_cells, do_points;
 int nrows, ncols;

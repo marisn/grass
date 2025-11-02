@@ -27,6 +27,12 @@ cells with a flow accumulation value that is likely to be an
 underestimate are converted to the negative. See below for a detailed
 description of flow accumulation output.
 
+By **-e** flag the user can disable the edge effect handling in SFD mode.
+When this flag is set, flow accumulation will be calculated for cells on
+the border of the map, which might be useful for specific analysis,
+but could also lead to artifacts. Without the **-e** flag, cells
+touching an edge of map are not counted in (are assumed to drain off-map).
+
 Option **convergence** specifies convergence factor for MFD. Lower
 values result in higher divergence, flow is more widely distributed.
 Higher values result in higher convergence, flow is less widely

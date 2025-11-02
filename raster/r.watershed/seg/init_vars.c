@@ -49,6 +49,7 @@ int init_vars(int argc, char *argv[])
     c_fac = 5;
     abs_acc = 0;
     ele_scale = 1;
+    no_edge_effect_flag = 0;
     segs_mb = 300;
     /* scan options */
     for (r = 1; r < argc; r++) {
@@ -109,6 +110,8 @@ int init_vars(int argc, char *argv[])
             mfd = 0;
         else if (strcmp(argv[r], "-a") == 0)
             abs_acc = 1;
+        else if (strcmp(argv[r], "-e") == 0)
+            no_edge_effect_flag = 1;
         else
             usage(argv[0]);
     }

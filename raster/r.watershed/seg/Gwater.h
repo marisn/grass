@@ -87,7 +87,7 @@ OC_STACK
 
 extern struct Cell_head window;
 
-extern int mfd, c_fac, abs_acc, ele_scale;
+extern int mfd, c_fac, abs_acc, ele_scale, no_edge_effect_flag;
 extern SSEG search_heap;
 extern int nrows, ncols;
 extern GW_LARGE_INT heap_size;

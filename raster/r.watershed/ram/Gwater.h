@@ -47,7 +47,7 @@ OC_STACK
 
 extern struct Cell_head window;
 
-extern int mfd, c_fac, abs_acc, ele_scale;
+extern int mfd, c_fac, abs_acc, ele_scale, no_edge_effect_flag;
 extern size_t *heap_index, heap_size;
 extern size_t first_astar, first_cum, nxt_avail_pt, total_cells, do_points;
 extern int nrows, ncols;

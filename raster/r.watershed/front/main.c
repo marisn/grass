@@ -240,6 +240,11 @@ int main(int argc, char *argv[])
     flag_flat->description =
         _("Flow direction in flat areas is modified to look prettier");
 
+    struct Flag *flag_sfd_edge = G_define_flag();
+    flag_sfd_edge->key = 'e';
+    flag_sfd_edge->label = _("Disable edge effect in SFD mode");
+    flag_sfd_edge->description = _("Count in edge cells for accumulation");
+
     /* Some options requires threshold */
     G_option_requires(opt10, opt6, NULL);
     G_option_requires(opt11, opt6, NULL);
@@ -276,6 +281,9 @@ int main(int argc, char *argv[])
 
     if (flag_flat->answer && !flag_seg->answer)
         new_argv[new_argc++] = "-b";
+
+    if (flag_sfd_edge->answer)
+        new_argv[new_argc++] = "-e";
 
     if (flag_flat->answer && flag_seg->answer)
         G_message(

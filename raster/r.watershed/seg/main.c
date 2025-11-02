@@ -24,7 +24,7 @@
 
 struct Cell_head window;
 
-int mfd, c_fac, abs_acc, ele_scale;
+int mfd, c_fac, abs_acc, ele_scale, no_edge_effect_flag;
 SSEG search_heap;
 int nrows, ncols;
 GW_LARGE_INT heap_size;
