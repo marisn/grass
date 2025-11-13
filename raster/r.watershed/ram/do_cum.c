@@ -198,6 +198,14 @@ int do_cum(void)
                     valued = value - valued;
             }
             wat[down_index] = valued;
+            if (accum_min_flag) {
+                if (accum_min[this_index] < accum_min[down_index])
+                    accum_min[down_index] = accum_min[this_index];
+            }
+            if (accum_max_flag) {
+                if (accum_max[this_index] > accum_max[down_index])
+                    accum_max[down_index] = accum_max[this_index];
+            }
 
             /* topographic wetness index ln(a / tan(beta)) and
              * stream power index a * tan(beta) */
@@ -457,6 +465,35 @@ int do_cum_mfd(void)
                                     valued = value * weight[ct_dir] - valued;
                             }
                             wat[nbr_index] = valued;
+
+                            /* FIXME: ele > ele_nbr check is required as
+                             * this MFD implementation is a single pass
+                             * thus if min/max value is set for a first
+                             * processed cell, it can propagate to all
+                             * other equal elevation cells what it would
+                             * not reach if if it would be set for the
+                             * last cell in processing order.
+                             * Thus propagation is not allowed between
+                             * cells of same elevation, but only lower
+                             * ones.
+                             * This limitation can be eliminated, if
+                             * code is modified to be processing order
+                             * neutral.
+                             */
+                            if (accum_min_flag) {
+                                if (ele > alt[nbr_index] &&
+                                    accum_min[this_index] <
+                                        accum_min[nbr_index])
+                                    accum_min[nbr_index] =
+                                        accum_min[this_index];
+                            }
+                            if (accum_max_flag) {
+                                ele_nbr = alt[nbr_index];
+                                if (ele > ele_nbr && accum_max[this_index] >
+                                                         accum_max[nbr_index])
+                                    accum_max[nbr_index] =
+                                        accum_max[this_index];
+                            }
                         }
                         else if (ct_dir == np_side) {
                             /* check for consistency with A * path */
@@ -487,6 +524,16 @@ int do_cum_mfd(void)
                 }
                 wat[down_index] = valued;
 
+                if (accum_min_flag) {
+                    if (ele > alt[down_index] &&
+                        accum_min[this_index] < accum_min[down_index])
+                        accum_min[down_index] = accum_min[this_index];
+                }
+                if (accum_max_flag) {
+                    if (ele > alt[down_index] &&
+                        accum_max[this_index] > accum_max[down_index])
+                        accum_max[down_index] = accum_max[this_index];
+                }
                 if (atanb_flag) {
                     sum_contour = contour[np_side];
                     tci_div = get_slope_tci(ele, alt[down_index],

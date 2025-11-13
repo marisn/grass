@@ -23,6 +23,7 @@ int init_vars(int argc, char *argv[])
     ele_flag = pit_flag = run_flag = ril_flag = rtn_flag = 0;
     /* output */
     wat_flag = asp_flag = tci_flag = spi_flag = atanb_flag = 0;
+    accum_min_flag = accum_max_flag = 0;
     bas_flag = seg_flag = haf_flag = 0;
     bas_thres = 0;
     /* shed, unused */
@@ -53,6 +54,10 @@ int init_vars(int argc, char *argv[])
             tci_flag++;
         else if (sscanf(argv[r], "spi=%s", spi_name) == 1)
             spi_flag++;
+        else if (sscanf(argv[r], "accum_min=%s", accum_min_name) == 1)
+            accum_min_flag++;
+        else if (sscanf(argv[r], "accum_max=%s", accum_max_name) == 1)
+            accum_max_flag++;
         else if (sscanf(argv[r], "drainage=%s", asp_name) == 1)
             asp_flag++;
         else if (sscanf(argv[r], "depression=%s", pit_name) == 1)
@@ -159,6 +164,13 @@ int init_vars(int argc, char *argv[])
         atanb_flag = 1;
     }
 
+    if (accum_min_flag || accum_max_flag) {
+        accum_min = (DCELL *)G_malloc(sizeof(DCELL) *
+                                      size_array(&accum_min_seg, nrows, ncols));
+        accum_max = (DCELL *)G_malloc(sizeof(DCELL) *
+                                      size_array(&accum_max_seg, nrows, ncols));
+    }
+
     asp = (CELL *)G_malloc(size_array(&asp_seg, nrows, ncols) * sizeof(CELL));
 
     if (er_flag) {
@@ -259,6 +271,16 @@ int init_vars(int argc, char *argv[])
         }
         Rast_close(fd);
         G_free(dbuf);
+    }
+
+    if (accum_min_flag || accum_max_flag) {
+        for (r = 0; r < nrows; r++) {
+            for (c = 0; c < ncols; c++) {
+                seg_idx = SEG_INDEX(wat_seg, r, c);
+                accum_min[seg_idx] = wat[seg_idx];
+                accum_max[seg_idx] = wat[seg_idx];
+            }
+        }
     }
 
     /* read retention map to adjust flow distribution (AG) */

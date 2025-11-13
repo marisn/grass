@@ -203,6 +203,23 @@ int do_cum(void)
             wadown.wat = valued;
             seg_put(&watalt, (char *)&wadown, dr, dc);
 
+            if (accum_min_flag) {
+                DCELL current_accum_min, downstream_accum_min;
+
+                dseg_get(&accum_min_seg, &current_accum_min, r, c);
+                dseg_get(&accum_min_seg, &downstream_accum_min, dr, dc);
+                if (current_accum_min < downstream_accum_min)
+                    dseg_put(&accum_min_seg, &current_accum_min, dr, dc);
+            }
+            if (accum_max_flag) {
+                DCELL current_accum_max, downstream_accum_max;
+
+                dseg_get(&accum_max_seg, &current_accum_max, r, c);
+                dseg_get(&accum_max_seg, &downstream_accum_max, dr, dc);
+                if (current_accum_max > downstream_accum_max)
+                    dseg_put(&accum_max_seg, &current_accum_max, dr, dc);
+            }
+
             /* topographic wetness index ln(a / tan(beta)) and
              * stream power index a * tan(beta) */
             if (atanb_flag) {
@@ -497,6 +514,41 @@ int do_cum_mfd(void)
                             wa.wat = valued;
                             wa.ele = ele_nbr[ct_dir];
                             seg_put(&watalt, (char *)&wa, r_nbr, c_nbr);
+
+                            if (accum_min_flag) {
+                                if (ele > ele_nbr[ct_dir]) {
+                                    DCELL current_accum_min,
+                                        downstream_accum_min;
+                                    dseg_get(&accum_min_seg, &current_accum_min,
+                                             r, c);
+                                    dseg_get(&accum_min_seg,
+                                             &downstream_accum_min, r_nbr,
+                                             c_nbr);
+                                    if (current_accum_min <
+                                        downstream_accum_min) {
+                                        dseg_put(&accum_min_seg,
+                                                 &current_accum_min, r_nbr,
+                                                 c_nbr);
+                                    }
+                                }
+                            }
+                            if (accum_max_flag) {
+                                if (ele > ele_nbr[ct_dir]) {
+                                    DCELL current_accum_max,
+                                        downstream_accum_max;
+                                    dseg_get(&accum_max_seg, &current_accum_max,
+                                             r, c);
+                                    dseg_get(&accum_max_seg,
+                                             &downstream_accum_max, r_nbr,
+                                             c_nbr);
+                                    if (current_accum_max >
+                                        downstream_accum_max) {
+                                        dseg_put(&accum_max_seg,
+                                                 &current_accum_max, r_nbr,
+                                                 c_nbr);
+                                    }
+                                }
+                            }
                         }
                         else if (ct_dir == np_side) {
                             /* check for consistency with A * path */
@@ -520,6 +572,29 @@ int do_cum_mfd(void)
             }
             /* SFD-like accumulation */
             else {
+                if (accum_min_flag) {
+                    if (ele > ele_nbr[np_side]) {
+                        DCELL current_accum_min, downstream_accum_min;
+                        dseg_get(&accum_min_seg, &current_accum_min, r, c);
+                        dseg_get(&accum_min_seg, &downstream_accum_min, dr, dc);
+                        if (current_accum_min < downstream_accum_min) {
+                            dseg_put(&accum_min_seg, &current_accum_min, dr,
+                                     dc);
+                        }
+                    }
+                }
+                if (accum_max_flag) {
+                    if (ele > ele_nbr[np_side]) {
+                        DCELL current_accum_max, downstream_accum_max;
+                        dseg_get(&accum_max_seg, &current_accum_max, r, c);
+                        dseg_get(&accum_max_seg, &downstream_accum_max, dr, dc);
+                        if (current_accum_max > downstream_accum_max) {
+                            dseg_put(&accum_max_seg, &current_accum_max, dr,
+                                     dc);
+                        }
+                    }
+                }
+
                 valued = wat_nbr[np_side];
                 if (value > 0) {
                     if (valued > 0)

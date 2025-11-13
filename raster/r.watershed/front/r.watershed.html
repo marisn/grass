@@ -119,6 +119,22 @@ with negative values cannot have their surface runoff and sedimentation
 yields calculated accurately.
 
 <p>
+Output <b>accum_min</b> raster map contains the minimum flow accumulation
+value. This map indicates, for each cell, the smallest amount of
+overland flow units originating from any upstream source that traverses
+that cell. Flow must be specified as a <b>flow</b> map.
+Note: Because MFD is implemented as a single-pass algorithm, min and max
+values are not propagated to cells of identical elevation, as doing so
+would produce results that depend on the arbitrary processing order of
+equal-height cells.
+
+<p>
+Output <b>accum_max</b> raster map contains the maximum flow accumulation
+value. This map indicates, for each cell, the largest amount of overland
+flow units originating from any upstream source that traverses that cell.
+Flow must be specified as a <b>flow</b> map.
+
+<p>
 Output <b>tci</b> raster map contains topographic index TCI,
 computed as
 <code>ln(&alpha; / tan(&beta;))</code> where &alpha; is the cumulative

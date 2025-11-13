@@ -32,6 +32,7 @@ int init_vars(int argc, char *argv[])
     ele_flag = pit_flag = run_flag = ril_flag = rtn_flag = 0;
     /* output */
     wat_flag = asp_flag = tci_flag = spi_flag = atanb_flag = 0;
+    accum_min_flag = accum_max_flag = 0;
     bas_flag = seg_flag = haf_flag = 0;
     bas_thres = 0;
     /* shed, unused */
@@ -60,6 +61,10 @@ int init_vars(int argc, char *argv[])
             tci_flag++;
         else if (sscanf(argv[r], "spi=%s", spi_name) == 1)
             spi_flag++;
+        else if (sscanf(argv[r], "accum_min=%s", accum_min_name) == 1)
+            accum_min_flag++;
+        else if (sscanf(argv[r], "accum_max=%s", accum_max_name) == 1)
+            accum_max_flag++;
         else if (sscanf(argv[r], "drainage=%s", asp_name) == 1)
             asp_flag++;
         else if (sscanf(argv[r], "depression=%s", pit_name) == 1)
@@ -220,6 +225,11 @@ int init_vars(int argc, char *argv[])
         }
     }
 
+    if (accum_min_flag || accum_max_flag) {
+        memory_divisor += sizeof(DCELL) * 3; /* con, con_min, con_max */
+        disk_space += sizeof(DCELL) * 3;
+    }
+
     /* KB -> MB */
     memory_divisor = memory_divisor * seg_factor / 1024.;
     disk_space = disk_space * seg_factor / 1024.;
@@ -277,6 +287,11 @@ int init_vars(int argc, char *argv[])
                  sizeof(A_TANB));
         Rast_set_d_null_value(&sca_tanb.sca, 1);
         Rast_set_d_null_value(&sca_tanb.tanb, 1);
+    }
+
+    if (accum_min_flag || accum_max_flag) {
+        dseg_open(&accum_min_seg, seg_rows, seg_cols, num_open_segs);
+        dseg_open(&accum_max_seg, seg_rows, seg_cols, num_open_segs);
     }
 
     /* open elevation input */
@@ -396,6 +411,17 @@ int init_vars(int argc, char *argv[])
     if (run_flag) {
         Rast_close(wat_fd);
         G_free(watbuf);
+    }
+
+    if (accum_min_flag || accum_max_flag) {
+        for (r = 0; r < nrows; r++) {
+            seg_get_row(&watalt, (char *)wabuf, r);
+            for (c = 0; c < ncols; c++) {
+                dvalue = wabuf[c].wat;
+                dseg_put(&accum_min_seg, &dvalue, r, c);
+                dseg_put(&accum_max_seg, &dvalue, r, c);
+            }
+        }
     }
 
     /* read retention map to adjust flow distribution (AG) */

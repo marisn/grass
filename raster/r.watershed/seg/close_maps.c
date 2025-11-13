@@ -303,6 +303,42 @@ int close_maps(void)
         }
     }
 
+    if (accum_min_flag) {
+        G_message(_("Closing upstream min of accumulation map"));
+        dbuf = Rast_allocate_d_buf();
+        fd = Rast_open_new(accum_min_name, DCELL_TYPE);
+        for (r = 0; r < nrows; r++) {
+            Rast_set_d_null_value(dbuf, ncols);
+            for (c = 0; c < ncols; c++) {
+                dseg_get(&accum_min_seg, &dvalue, r, c);
+                if (!Rast_is_d_null_value(&dvalue)) {
+                    dbuf[c] = dvalue;
+                }
+            }
+            Rast_put_row(fd, dbuf, DCELL_TYPE);
+        }
+        Rast_close(fd);
+        G_free(dbuf);
+    }
+
+    if (accum_max_flag) {
+        G_message(_("Closing upstream max of accumulation map"));
+        dbuf = Rast_allocate_d_buf();
+        fd = Rast_open_new(accum_max_name, DCELL_TYPE);
+        for (r = 0; r < nrows; r++) {
+            Rast_set_d_null_value(dbuf, ncols);
+            for (c = 0; c < ncols; c++) {
+                dseg_get(&accum_max_seg, &dvalue, r, c);
+                if (!Rast_is_d_null_value(&dvalue)) {
+                    dbuf[c] = dvalue;
+                }
+            }
+            Rast_put_row(fd, dbuf, DCELL_TYPE);
+        }
+        Rast_close(fd);
+        G_free(dbuf);
+    }
+
     seg_close(&watalt);
     if (asp_flag) {
         G_message(_("Closing flow direction map"));
@@ -361,6 +397,11 @@ int close_maps(void)
         dseg_close(&s_g);
     if (ls_flag || sg_flag)
         cseg_close(&r_h);
+
+    if (accum_min_flag)
+        dseg_close(&accum_min_seg);
+    if (accum_max_flag)
+        dseg_close(&accum_max_seg);
 
     return 0;
 }

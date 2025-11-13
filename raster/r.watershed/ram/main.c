@@ -59,12 +59,17 @@ char ls_name[GNAME_MAX], st_name[GNAME_MAX], sl_name[GNAME_MAX],
     sg_name[GNAME_MAX];
 char wat_name[GNAME_MAX], asp_name[GNAME_MAX], tci_name[GNAME_MAX],
     spi_name[GNAME_MAX];
+char accum_min_name[GNAME_MAX], accum_max_name[GNAME_MAX];
 char arm_name[GNAME_MAX], dis_name[GNAME_MAX];
 char ele_flag, pit_flag, run_flag, dis_flag, ob_flag, flat_flag;
 char wat_flag, asp_flag, arm_flag, ril_flag, dep_flag, rtn_flag;
 char bas_flag, seg_flag, haf_flag, er_flag, tci_flag, spi_flag, atanb_flag;
+char accum_min_flag, accum_max_flag;
 char st_flag, sb_flag, sg_flag, sl_flag, ls_flag;
 FILE *fp;
+
+RAMSEG accum_min_seg, accum_max_seg;
+DCELL *accum_min, *accum_max;
 
 int main(int argc, char *argv[])
 {

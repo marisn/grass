@@ -60,10 +60,12 @@ extern FLAG *worked, *in_list, *s_b, *swale, *flat_done;
 extern RAMSEG dis_seg, alt_seg, wat_seg, asp_seg, bas_seg, haf_seg;
 extern RAMSEG r_h_seg, dep_seg, rtn_seg;
 extern RAMSEG slp_seg, s_l_seg, s_g_seg, l_s_seg;
+extern RAMSEG accum_min_seg, accum_max_seg;
 extern size_t *astar_pts;
 extern CELL *dis, *alt, *asp, *bas, *haf, *r_h, *dep;
 extern char *rtn;
 extern DCELL *wat, *sca, *tanb;
+extern DCELL *accum_min, *accum_max;
 extern int ril_fd;
 extern double *s_l, *s_g, *l_s;
 extern CELL one, zero;
@@ -83,11 +85,13 @@ extern char ls_name[GNAME_MAX], st_name[GNAME_MAX], sl_name[GNAME_MAX],
     sg_name[GNAME_MAX];
 extern char wat_name[GNAME_MAX], asp_name[GNAME_MAX], tci_name[GNAME_MAX],
     spi_name[GNAME_MAX];
+extern char accum_min_name[GNAME_MAX], accum_max_name[GNAME_MAX];
 extern char arm_name[GNAME_MAX], dis_name[GNAME_MAX];
 extern char ele_flag, pit_flag, run_flag, dis_flag, ob_flag, flat_flag,
     rtn_flag;
 extern char wat_flag, asp_flag, arm_flag, ril_flag, dep_flag, tci_flag,
     spi_flag, atanb_flag;
+extern char accum_min_flag, accum_max_flag;
 extern char bas_flag, seg_flag, haf_flag, er_flag;
 extern char st_flag, sb_flag, sg_flag, sl_flag, ls_flag;
 extern FILE *fp;

@@ -17,7 +17,8 @@ int close_maps(void)
 
     if (asp_flag || dis_flag)
         buf = Rast_allocate_c_buf();
-    if (wat_flag || ls_flag || sl_flag || sg_flag || atanb_flag)
+    if (wat_flag || ls_flag || sl_flag || sg_flag || atanb_flag ||
+        accum_min_flag || accum_max_flag)
         dbuf = Rast_allocate_d_buf();
     G_free(alt);
     if (rtn_flag)
@@ -253,6 +254,37 @@ int close_maps(void)
         }
         Rast_write_colors(spi_name, this_mapset, &colors);
     }
+
+    if (accum_min_flag) {
+        fd = Rast_open_new(accum_min_name, DCELL_TYPE);
+        for (r = 0; r < nrows; r++) {
+            Rast_set_d_null_value(dbuf, ncols);
+            for (c = 0; c < ncols; c++) {
+                dvalue = accum_min[SEG_INDEX(accum_min_seg, r, c)];
+                if (!Rast_is_d_null_value(&dvalue)) {
+                    dbuf[c] = dvalue;
+                }
+            }
+            Rast_put_row(fd, dbuf, DCELL_TYPE);
+        }
+        Rast_close(fd);
+    }
+
+    if (accum_max_flag) {
+        fd = Rast_open_new(accum_max_name, DCELL_TYPE);
+        for (r = 0; r < nrows; r++) {
+            Rast_set_d_null_value(dbuf, ncols);
+            for (c = 0; c < ncols; c++) {
+                dvalue = accum_max[SEG_INDEX(accum_max_seg, r, c)];
+                if (!Rast_is_d_null_value(&dvalue)) {
+                    dbuf[c] = dvalue;
+                }
+            }
+            Rast_put_row(fd, dbuf, DCELL_TYPE);
+        }
+        Rast_close(fd);
+    }
+
     if (atanb_flag) {
         G_free(sca);
         G_free(tanb);
@@ -323,6 +355,13 @@ int close_maps(void)
         }
         Rast_close(fd);
         G_free(s_g);
+    }
+
+    if (accum_min_flag) {
+        G_free(accum_min);
+    }
+    if (accum_max_flag) {
+        G_free(accum_max);
     }
 
     return 0;

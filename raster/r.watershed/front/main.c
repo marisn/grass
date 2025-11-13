@@ -61,6 +61,8 @@ int main(int argc, char *argv[])
     struct Option *opt17;
     struct Option *opt18;
     struct Option *opt19;
+    struct Option *opt22;
+    struct Option *opt23;
     struct Flag *flag_sfd;
     struct Flag *flag_flow;
     struct Flag *flag_seg;
@@ -158,6 +160,18 @@ int main(int argc, char *argv[])
     opt18->required = NO;
     opt18->guisection = _("Outputs");
 
+    opt22 = G_define_standard_option(G_OPT_R_OUTPUT);
+    opt22->key = "accum_min";
+    opt22->description = _("Name for output min of accumulation raster map");
+    opt22->required = NO;
+    opt22->guisection = _("Outputs");
+
+    opt23 = G_define_standard_option(G_OPT_R_OUTPUT);
+    opt23->key = "accum_max";
+    opt23->description = _("Name for output max of accumulation raster map");
+    opt23->required = NO;
+    opt23->guisection = _("Outputs");
+
     opt9 = G_define_standard_option(G_OPT_R_OUTPUT);
     opt9->key = "drainage";
     opt9->label = _("Name for output drainage direction raster map");
@@ -247,9 +261,13 @@ int main(int argc, char *argv[])
     G_option_requires(opt13, opt6, NULL);
     G_option_requires(opt14, opt6, NULL);
 
+    /* Min and Max are always 1 if no Flow map is provided thus mandatory */
+    G_option_requires(opt22, opt3, NULL);
+    G_option_requires(opt23, opt3, NULL);
+
     /* Check for some output map */
     G_option_required(opt8, opt17, opt18, opt9, opt10, opt11, opt12, opt13,
-                      opt14, NULL);
+                      opt14, opt22, opt23, NULL);
 
     if (G_parser(argc, argv))
         exit(EXIT_FAILURE);
@@ -287,6 +305,8 @@ int main(int argc, char *argv[])
     do_opt(opt4);
     do_opt(opt5);
     do_opt(opt19);
+    do_opt(opt22);
+    do_opt(opt23);
     do_opt(opt6);
     do_opt(opt7);
     do_opt(opt8);
@@ -347,6 +367,13 @@ int main(int argc, char *argv[])
                    opt1->answer, flag_seg->answer, flag_sfd->answer);
     if (opt14->answer)
         write_hist(opt14->answer, "Watershed slope steepness (S) factor",
+                   opt1->answer, flag_seg->answer, flag_sfd->answer);
+
+    if (opt22->answer)
+        write_hist(opt22->answer, "Watershed upstream min of accumulation",
+                   opt1->answer, flag_seg->answer, flag_sfd->answer);
+    if (opt23->answer)
+        write_hist(opt23->answer, "Watershed upstream max of accumulation",
                    opt1->answer, flag_seg->answer, flag_sfd->answer);
 
     exit(ret);

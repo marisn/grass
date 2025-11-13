@@ -103,6 +103,7 @@ extern BSEG s_b, rtn;
 extern CSEG dis, bas, haf, r_h, dep;
 extern SSEG watalt, aspflag;
 extern DSEG slp, s_l, s_g, l_s, ril;
+extern DSEG accum_min_seg, accum_max_seg;
 extern SSEG atanb;
 extern double segs_mb;
 extern char zero, one;
@@ -123,10 +124,12 @@ extern char ls_name[GNAME_MAX], st_name[GNAME_MAX], sl_name[GNAME_MAX],
     sg_name[GNAME_MAX];
 extern char wat_name[GNAME_MAX], asp_name[GNAME_MAX];
 extern char tci_name[GNAME_MAX], spi_name[GNAME_MAX];
+extern char accum_min_name[GNAME_MAX], accum_max_name[GNAME_MAX];
 extern char arm_name[GNAME_MAX], dis_name[GNAME_MAX];
 extern char ele_flag, pit_flag, run_flag, dis_flag, ob_flag, rtn_flag;
 extern char wat_flag, asp_flag, arm_flag, ril_flag, dep_flag, tci_flag,
     spi_flag, atanb_flag;
+extern char accum_min_flag, accum_max_flag;
 extern char bas_flag, seg_flag, haf_flag, er_flag;
 extern char st_flag, sb_flag, sg_flag, sl_flag, ls_flag;
 extern FILE *fp;
